@@ -1,0 +1,236 @@
+.App {
+  text-align: center;
+  overflow:hidden;
+  
+}
+.mainCnt{
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  top: 65px;
+  margin-bottom: 65px;
+}
+
+.headerCount {
+    float: left;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0;
+    color: #16325c;
+    margin-left: 8px;
+}
+.headerName {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #16325c;
+}
+.headerCnt {
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(100%,1fr));
+    margin: 10px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: solid 1px #e6f0fb;
+}
+.headerTitle {
+    border: 1px solid #e6f0fb;
+    border-radius: 6px;
+    padding: 14px 16px;
+    background-color: rgba(246, 246, 251, 0.13);
+}
+.gamesCnt{
+    border-radius: 6px;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(73, 79, 89, 0.06);
+    border: solid 1px #f0f6fc;
+    width: 330px;
+    float: left;
+    margin: 10px;
+    height: 150px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.searchHeader {
+    background-color: #54698d;
+    padding: 18px;
+    display: block;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    top: 0px;
+}
+ul.suggestion-item {
+    position: absolute;
+    z-index: 10;
+    top: 37px;
+    list-style: none;
+    width: 253px;
+    right: 117px;
+    box-sizing: border-box;
+    color: white;
+    background: #54698d;
+    padding: 8px;
+    text-align: left;
+    border: solid 1px #e6f0fb;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.suggestion-item:empty {
+   display: none;
+}
+li.suggestion-list {
+    padding: 8px;
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom: solid 1px #e6f0fb;
+}
+.gamesTitle {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: #16325c;
+    text-align: left;
+}
+.gamesGenre {
+    font-weight: 300;
+    color: #16325c;
+    font-size: 14px;
+    float: left;
+}
+.gamesYear {
+    font-size: 14px;
+    font-weight: 300;
+    color: #54698d;
+    float: right;
+}
+.gamesfooter {
+    position: absolute;
+    bottom: 0px;
+    padding: 8px 0px;
+    width: 90%;
+    border-top: 1px solid #e6f0fb;
+}
+.gamesEC {
+    right: -10px;
+    bottom: 40px;
+    position: absolute;
+    font-size: 8px;
+    padding: 8px;
+    color: #ffffff;
+    background: #ffbd00;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 73px;
+    right: -10px;
+    border-bottom: 10px solid #ffbd00;
+    border-right: 10px solid transparent;
+}
+.searchBox{
+    background-color: transparent;
+    border: solid 1px #e6f0fb;
+    outline: none;
+    width: 250px;
+    border-radius: 4px;
+    display: flex;
+    float: right;
+    margin-right: 100px;
+}
+.search-input{
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    outline: none;
+    padding: 8px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: white;
+}
+.search-img{
+      margin-right: 10px;
+}
+.sortHeader{
+    display: inline-flex;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+}
+.sort-title{
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.sort-title:hover{
+  opacity: 0.7;
+}
+.sort-img{
+      margin-left: 10px;
+}
+.sort-img.inv{
+  -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari 3-8 */
+    transform: rotate(180deg);
+}
+.sort-title.active{
+  opacity: 1;
+}
+.gamesScore{
+    height: 19px;
+    border-radius: 9px;
+    border: solid 1px #54698d;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+}
+.score-img{
+    height: 17px;
+    width: 17px;
+    border: 1px solid #54698d;
+    border-radius: 50px;
+    background-color: #54698d;
+}
+.score-pt {
+    margin: 0px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #54698d;
+}
+.score-pt::after { 
+    content: " / 10";
+}
+.fa.fa-star{
+  color: white;
+}
+.fa.fa-star-half-o{
+  color: white;
+}
+@media (max-width:320px){
+  .gamesCnt{
+    width: 280px;
+  }
+  .searchBox{
+    margin-right: 31px;
+  }
+}
+@media (max-width:420px){
+  
+  .mainCnt{
+    top: 104px;
+    margin-bottom: 104px;
+  }
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

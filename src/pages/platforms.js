@@ -24,16 +24,14 @@ export default class Platform extends Component {
                 searchItem:GameStores.getSearchItem()||'',
             })
         }
-        else if(type=='GAMES_SORTED' || type=='GAMES_FILTERED' || type=='GAMES_REVERSED'){
+        else if(type==='GAMES_SORTED' || type==='GAMES_FILTERED' || type==='GAMES_REVERSED'){
             this.setState({
                 games:GameStores._getGames(title)||[],
             })
         }
     }
     displayGames(){
-        let {title} = this.props;
-        let {searchItem,games} = this.state;
-        // let games = GameStores._getGames(title);
+        let {games} = this.state;
         return games.map((g,i)=>{
                 return( <Games 
                         key={`games-${i}`} 
@@ -41,12 +39,13 @@ export default class Platform extends Component {
             })
     }
     render() {
-        let {title,count} = this.props;
+        let {title} = this.props;
+        let {games} = this.state;
         return (
             <div className="headerCnt">
                 <div className="headerTitle">
                     <div className="headerName">{title}: </div>
-                    <div className="headerCount">{count} {count>1?'Games':'Game'}</div>
+                    <div className="headerCount">{games.length} {games.length>1?'Games':'Game'}</div>
                 </div>
                 <div className="gamesMainCnt">
                     {this.displayGames()}

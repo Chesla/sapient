@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {fetchGames} from'./actions/gameaction';
 import GameStores from './stores/gamestores';
@@ -34,6 +33,11 @@ class App extends Component {
                 platform:GameStores._getPlatforms()||{}
             })
         }
+        else if(type==='GAMES_SORTED' || type==='GAMES_FILTERED' || type==='GAMES_REVERSED'){
+            this.setState({
+                platform:GameStores._getPlatforms()||{}
+            })
+        }
     }
     loadMoreItems() {
         if(this.state.loadingState){
@@ -60,7 +64,7 @@ class App extends Component {
     displayPlatforms(){
         let {platform,items} = this.state;
         let platforms=[],j=0;
-        if(platform.length==0){
+        if(platform.length===0){
             return null;
         }
         for(let i in platform){
@@ -69,7 +73,7 @@ class App extends Component {
                     <Platforms
                         key={i}
                         title={i}
-                        count={platform[i].length}/>
+                    />
                 )
             }
             j++;

@@ -29,13 +29,13 @@ export default class SearchBox extends Component {
                 openSuggestion:false
             })
         }
-        else if(type=='GAMES_SORTED'){
+        else if(type==='GAMES_SORTED'){
             this.setState({
                 itemsSorted:true,
                 itemsSort:true
             })
         }
-        else if(type=='GAMES_REVERSED'){
+        else if(type==='GAMES_REVERSED'){
             this.setState({
                 itemsSort:!this.state.itemsSort,
             })
@@ -59,7 +59,7 @@ export default class SearchBox extends Component {
     showSuggestionList(){
         let {searchItem} = this.state;
         let searchList = GameStores._getGamesList()||[];
-        if(searchItem==''){
+        if(searchItem===''){
             return null;
         }
         return searchList.filter((sl)=>{
@@ -71,7 +71,7 @@ export default class SearchBox extends Component {
         })
     }
     sortItems(){
-        let {itemsSorted,itemsSort}=this.state;
+        let {itemsSorted}=this.state;
         if(!itemsSorted){
             GameStores.sortItems();
         }else{
@@ -82,14 +82,16 @@ export default class SearchBox extends Component {
         let {searchItem,openSuggestion,itemsSort,itemsSorted} = this.state;
         return (
             <div className="searchHeader">
-            <div >
+
+            <div>
+                <div className="pr-title">Sapient Game Arena</div>
                 <div className="searchBox">
                     <input 
                         className="search-input"
                         type="text"
                         value={searchItem}
                         onKeyUp={(ev)=>{
-                            if(ev.keyCode==13 ){
+                            if(ev.keyCode===13 ){
                                 GameStores.setSearchItem(searchItem)
                             }
                         }}

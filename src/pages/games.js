@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 export default class Games extends Component {
-    constructor(props){
-        super(props);
-        
-    }
-    
-    
-    render(){
+     render(){
         let {gameDet} = this.props;
         return(
             <div className="gamesCnt">
